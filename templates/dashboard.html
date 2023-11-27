@@ -1,0 +1,17 @@
+{% include "base.html" %}
+
+{% load static %}
+
+{% block content %}
+<center> {% include 'alerts.html' %}</center>
+<section>
+    <h2>User Information</h2>
+    <img src="{{ user.profile_picture.url }}" alt="{{ user.first_name }} {{ user.last_name }}'s profile picture" style="border-radius: 50%" width="100px" height="100px">
+    <p>Name: {{ user.first_name }} {{ user.last_name }}</p>
+    <p>Email: {{ user.email }}</p>
+    <p>Address: {{ user.address_line1 }}, {{ user.city }}, {{ user.state }} - {{ user.pincode }}</p>
+    <!-- Add other doctor-specific details -->
+</section>
+
+
+{% endblock %}
